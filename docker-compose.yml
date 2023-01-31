@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+   
+  fiscalization-its:
+   container_name: fiscalizationITS
+   image: itechsolutionsal/fiscalization:master1.1.8.7
+   restart: always
+   network_mode: bridge
+   ports:
+     - 8888:80
+   environment:
+     KEYSTORE_LOCATION: cert its.p12
+     KEYSTORE_PASS: ITS@2022
+     IS_PRODUCTION: "false"
+   
+
+   volumes:
+      - /home/Downloads/INTEGRATED TECH SOLUTIONS TST.p12:/app/cert its.p12
+
